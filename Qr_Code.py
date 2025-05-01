@@ -30,7 +30,7 @@ if fname and lname:
             """,
             unsafe_allow_html=True
         )
-        time.sleep(6.5)
+        time.sleep(7.2)
         st.session_state.audio_played = True
 
     if st.session_state.audio_played:
