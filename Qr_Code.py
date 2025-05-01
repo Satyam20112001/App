@@ -25,7 +25,7 @@ if fname and lname:
 
     # Instagram Post Requirement
     st.info("You have to like this Instagram post first. Then only we move forward.")
-    st.markdown(
+    st.button(
         '<a href="https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link" target="_blank">Open Instagram Post</a>',
         unsafe_allow_html=True
     )
