@@ -53,12 +53,33 @@ if fname and lname:
     if st.session_state.volume_ok:
         st.info("🚨 You have to like a post first. Then only we move forward.")
 
-        # Instagram Button
-        if st.button("Open Instagram Post"):
+        # Styled Instagram Button (using markdown to open in a new tab)
+        if st.button("Click here to Open Instagram Post"):
             st.session_state.instagram_clicked = True  # Mark that the button was clicked
 
         # Show "Have you liked the post?" only after the Instagram button is clicked
         if st.session_state.instagram_clicked:
+            st.markdown(
+                """
+                <style>
+                .insta-button {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    background-color: #E1306C;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    text-decoration: none;
+                }
+                </style>
+                <a href="https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link" 
+                   target="_blank" class="insta-button">Open Instagram Post</a>
+                """,
+                unsafe_allow_html=True
+            )
+            
+            # Once the Instagram button is clicked, show "Have you liked the post?" question
             liked = st.radio("Have you liked the post?", ["Yes", "No"], index=None)  # Make the default option empty
 
             # Show content only after the user selects an option
