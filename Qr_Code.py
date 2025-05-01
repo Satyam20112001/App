@@ -69,7 +69,7 @@ if fname and lname:
             unsafe_allow_html=True
         )
 
-        liked = st.radio("Have you liked the post?", ["", "Yes", "No"], index=None)  # Make the default option empty
+        liked = st.radio("Have you liked the post?", ["Yes", "No"], index=None)  # Make the default option empty
 
         # Show content only after the user selects an option
         if liked == "Yes":
@@ -81,7 +81,7 @@ if fname and lname:
                 </div>
                 <div style="text-align: center; margin-top: 30px;">
                     <iframe width="100%" height="500" 
-                        src="https://www.youtube.com/embed/AAEXDZ77eQI?autoplay=1&mute=0&controls=1" 
+                        src="https://www.memedownload.in/padhai-likhai-karoias-yas-bano-funny-meme4k-quality/" 
                         title="Padhai Likhai Karo" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
@@ -104,14 +104,14 @@ if fname and lname:
         # Add a message that a response is waiting
         st.markdown(
             """
-            <div style="text-align: center; font-size: 40px; font-weight: bold; color: blue; margin-top: 50px;">
-                **A message is waiting for you!**
+            <div style="text-align: center; font-size: 40px; font-weight: bold; color: yellow; margin-top: 50px;">
+                A message is waiting for you!
             </div>
             <div style="text-align: center; margin-top: 30px;">
-                <img src="https://www.stickpng.com/assets/images/5881d7c0f4a6f59e56bf3ec2.png" alt="Sticker 1" style="width: 80px; height: 80px; margin: 10px;">
-                <img src="https://www.stickpng.com/assets/images/5881d7c0f4a6f59e56bf3ec2.png" alt="Sticker 2" style="width: 80px; height: 80px; margin: 10px;">
-                <img src="https://www.stickpng.com/assets/images/5881d7c0f4a6f59e56bf3ec2.png" alt="Sticker 3" style="width: 80px; height: 80px; margin: 10px;">
+                <img src="https://media.giphy.com/media/cIbJ5bBlNLxynVGYzb/giphy.gif" 
+                     alt="Looping Message GIF" style="max-width: 100%; height: auto;">
             </div>
             """,
             unsafe_allow_html=True
         )
+
