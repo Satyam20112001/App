@@ -43,7 +43,8 @@ if fname and lname:
     </style>
     <a href="https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link" target="_blank" class="insta-button">Open Instagram Post</a>
     """,
-    unsafe_allow_html=True)
+    unsafe_allow_html=True);
+    
     liked = st.radio("Have you liked the post?", ["Yes", "No"])
     if liked == "No":
         st.warning("Please like the post to proceed.")
