@@ -14,7 +14,7 @@ if fname and lname:
 
     # Step 2: Ask to Increase Volume
     st.warning("🔊 Please increase your volume to maximum to proceed.")
-    st.audio("https://github.com/murpi/wilddata/raw/master/sounds/space.mp3")
+    st.audio("https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3")
 
     volume_check = st.radio("Could you hear the sound clearly?", ["Yes", "No"])
     if volume_check == "No":
