@@ -12,7 +12,7 @@ if "instagram_clicked" not in st.session_state:
     st.session_state.instagram_clicked = False  # Track if Instagram button was clicked
 
 # Step 1: Get User Title
-title = st.radio("Select your Title", ["Mr.", "Miss", "Mrs.", "Dr."], index=None)
+title = st.radio("Select your Title", ["Mr.", "Miss", "Mrs.", "Dr."])
 
 # Step 2: Get User Name
 fname = st.text_input("Enter your First Name")
@@ -53,33 +53,11 @@ if fname and lname:
     if st.session_state.volume_ok:
         st.info("🚨 You have to like a post first. Then only we move forward.")
 
-        # Display Instagram Button after the volume check
-        st.markdown(
-            """
-            <style>
-            .insta-button {
-                display: inline-block;
-                padding: 10px 20px;
-                font-size: 16px;
-                background-color: #E1306C;
-                color: white;
-                border: none;
-                border-radius: 8px;
-                text-decoration: none;
-            }
-            </style>
-            <a href="https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link" 
-               target="_blank" class="insta-button" 
-               onclick="window.parent.postMessage('instagram_clicked', '*');">Open Instagram Post</a>
-            """,
-            unsafe_allow_html=True
-        )
+        # Instagram Button
+        if st.button("Open Instagram Post"):
+            st.session_state.instagram_clicked = True  # Mark that the button was clicked
 
-        # Check if Instagram button was clicked
-        if "instagram_clicked" in st.session_state and not st.session_state.instagram_clicked:
-            st.session_state.instagram_clicked = True  # Set to true when clicked
-
-        # Only show the "Have you liked the post?" after Instagram button is clicked
+        # Show "Have you liked the post?" only after the Instagram button is clicked
         if st.session_state.instagram_clicked:
             liked = st.radio("Have you liked the post?", ["Yes", "No"], index=None)  # Make the default option empty
 
