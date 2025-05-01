@@ -69,12 +69,13 @@ if fname and lname:
             unsafe_allow_html=True
         )
 
-        liked = st.radio("Have you liked the post?", ["Yes", "No"], index=None)
+        liked = st.radio("Have you liked the post?", ["", "Yes", "No"], index=None)  # Make the default option empty
 
-            if liked == "Yes":
-                st.markdown(
-                    """
-                    <div style="text-align: center; font-size: 28px; font-weight: bold; color: green; margin-top: 30px;">
+        # Show content only after the user selects an option
+        if liked == "Yes":
+            st.markdown(
+                """
+                <div style="text-align: center; font-size: 28px; font-weight: bold; color: green; margin-top: 30px;">
                     काम खतम अब क्या करना है रुक कर, टाटा-बायबाय! लाइक तो मिल ही गया, अब यह रुक कर क्या देख रहे हो कुछ नहीं मिलेगा! 
                     जा कर पढ़ाई लिखाई करो! IS, YS बनो, और यहा हवा आने दो! 😉 फिर मिलेंगे. जब कोई और 'महान' कार्य संपन्न करना हो!
                 </div>
@@ -86,17 +87,17 @@ if fname and lname:
                 </div>
                 """,
                 unsafe_allow_html=True
-                )
-            else:
-                st.markdown(
-                    """
-                    <div style="text-align: center; font-size: 36px; font-weight: bold; color: red; margin-top: 50px;">
-                        Pehli fursat mai nikal!
-                    </div>
-                    <div style="text-align: center; margin-top: 30px;">
-                        <img src="https://scrolldroll.com/wp-content/uploads/2021/05/hindustani-bhau-meme-templates-nikal-lavde-pehli-fursat-mein-nikal.jpg" 
-                        alt="Pehli Fursat Me Nikal" style="max-width: 100%; height: auto;">
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
+            )
+        elif liked == "No":
+            st.markdown(
+                """
+                <div style="text-align: center; font-size: 36px; font-weight: bold; color: red; margin-top: 50px;">
+                    Pehli fursat mai nikal!
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <img src="https://scrolldroll.com/wp-content/uploads/2021/05/hindustani-bhau-meme-templates-nikal-lavde-pehli-fursat-mein-nikal.jpg" 
+                    alt="Pehli Fursat Me Nikal" style="max-width: 100%; height: auto;">
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
