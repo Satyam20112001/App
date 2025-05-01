@@ -101,3 +101,17 @@ if fname and lname:
                 """,
                 unsafe_allow_html=True
             )
+        # Add a message that a response is waiting
+        st.markdown(
+            """
+            <div style="text-align: center; font-size: 40px; font-weight: bold; color: blue; margin-top: 50px;">
+                **A message is waiting for you!**
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <img src="https://www.stickpng.com/assets/images/5881d7c0f4a6f59e56bf3ec2.png" alt="Sticker 1" style="width: 80px; height: 80px; margin: 10px;">
+                <img src="https://www.stickpng.com/assets/images/5881d7c0f4a6f59e56bf3ec2.png" alt="Sticker 2" style="width: 80px; height: 80px; margin: 10px;">
+                <img src="https://www.stickpng.com/assets/images/5881d7c0f4a6f59e56bf3ec2.png" alt="Sticker 3" style="width: 80px; height: 80px; margin: 10px;">
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
