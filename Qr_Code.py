@@ -51,10 +51,10 @@ if fname and lname:
 
     # Proceed only if volume is OK
     if st.session_state.volume_ok:
-        st.info("🚨 You have to like a post first. Then only we move forward.")
+        st.info("🚨 You have to like My Creative Space. Then only we move forward.")
 
         # Styled Instagram Button (using markdown to open in a new tab)
-        if st.button("Click here to Open Instagram Post"):
+        if st.button("Click here to Open My Life Journal"):
             st.session_state.instagram_clicked = True  # Mark that the button was clicked
 
         # Show "Have you liked the post?" only after the Instagram button is clicked
@@ -74,13 +74,13 @@ if fname and lname:
                 }
                 </style>
                 <a href="https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link" 
-                   target="_blank" class="insta-button">Open Instagram Post</a>
+                   target="_blank" class="insta-button">Open Memory Vault</a>
                 """,
                 unsafe_allow_html=True
             )
             
             # Once the Instagram button is clicked, show "Have you liked the post?" question
-            liked = st.radio("Have you liked the post?", ["Yes", "No"], index=None)  # Make the default option empty
+            liked = st.radio("Have you liked it?", ["Yes", "No"], index=None)  # Make the default option empty
 
             # Show content only after the user selects an option
             if liked == "Yes":
