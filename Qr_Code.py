@@ -27,9 +27,24 @@ if fname and lname:
 
     # Instagram post requirement
     st.info("You have to like this Instagram post first. Then only we move forward.")
-    if st.button("Open Instagram Post"):
-        webbrowser.open("https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link")
-
+    if st.markdown(
+    """
+    <style>
+    .insta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #E1306C;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+    </style>
+    <a href="https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link" target="_blank" class="insta-button">Open Instagram Post</a>
+    """,
+    unsafe_allow_html=True
+)
     liked = st.radio("Have you liked the post?", ["Yes", "No"])
     if liked == "No":
         st.warning("Please like the post to proceed.")
