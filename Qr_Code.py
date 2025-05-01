@@ -97,8 +97,12 @@ if fname and lname:
                 </div>
                 <div style="text-align: center; margin-top: 30px;">
                     <img src="https://scrolldroll.com/wp-content/uploads/2021/05/hindustani-bhau-meme-templates-nikal-lavde-pehli-fursat-mein-nikal.jpg" 
-                    alt="Pehli Fursat Me Nikal" style="max-width: 100%; height: auto;">
+                         alt="Pehli Fursat Me Nikal" style="max-width: 100%; height: auto;">
                 </div>
+                <audio autoplay hidden>
+                    <source src="https://cdn.jsdelivr.net/gh/Satyam20112001/my-video-assets@main/Hindustani%20Bhau%20-%20Pehli%20Fursat%20Mein%20Nikal%20meme%20template%20%20No%20gali%20%20%20memes.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
                 """,
                 unsafe_allow_html=True
             )
