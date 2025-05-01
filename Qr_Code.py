@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-st.title("🎩 Welcome to the Satyam Rajput's Portal")
+st.title("🎩 Welcome to the Satyam Rajput's Digital Portal")
 
 # Step 0: Setup session state
 if "audio_played" not in st.session_state:
@@ -20,7 +20,7 @@ lname = st.text_input("Enter your Last Name")
 
 if fname and lname:
     full_name = f"{title} {fname} {lname}"
-    st.success(f"Hello {full_name}, Satyam Welcomes you to his digital portal 👋")
+    st.success(f"Hello {full_name}, Mr. Satyam Welcomes you to his digital portal 👋")
 
     # Step 3: Prompt to Play Audio
     st.warning("🔊 Please click the button below to play the audio and wait for 5 seconds.")
