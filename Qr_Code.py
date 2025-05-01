@@ -1,6 +1,5 @@
 import streamlit as st
-
-st.set_page_config(page_title="Magic Trick App", layout="centered")
+import time
 
 st.title("🎩 Welcome to the Magic Trick Portal")
 
@@ -12,52 +11,59 @@ if fname and lname:
     full_name = f"{fname} {lname}"
     st.success(f"Hello Mr. {full_name} 👋")
 
-    # Step 2: Ask to Increase Volume
-    st.warning("🔊 Please increase your volume to maximum to proceed.")
-    st.audio("https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3")
+    # Step 2: Prompt to Play Audio
+    st.warning("🔊 Please click the button below to play the audio and wait for 5 seconds.")
 
-    volume_check = st.radio("Could you hear the sound clearly?", ["Yes", "No"])
-    if volume_check == "No":
-        st.error("You must increase the volume to continue. Bye!")
-        st.video("https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4")
+    if st.button("Play Audio"):
+        # Embed audio using HTML
+        st.markdown(
+            """
+            <audio controls autoplay>
+              <source src="https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            """,
+            unsafe_allow_html=True
+        )
+        # Wait for 5 seconds
+        time.sleep(5)
+        st.success("✅ Audio played for 5 seconds. You may proceed.")
+
+        # Step 3: Instagram Post Interaction
+        st.info("🚨 You have to like a post first. Then only we move forward.")
+
+        # Styled Instagram Button
+        st.markdown(
+            """
+            <style>
+            .insta-button {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #E1306C;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                text-decoration: none;
+            }
+            </style>
+            <a href="https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link" 
+               target="_blank" class="insta-button">Open Instagram Post</a>
+            """,
+            unsafe_allow_html=True
+        )
+
+        liked = st.radio("Have you liked the post?", ["Yes", "No"])
+        if liked == "Yes":
+            st.success("वाह! काम ख़त्म, तो टाटा-बायबाय! लाइक तो मिल ही गया, अब यहां रुकना... सरासर ज़्यादती है! चलिए जनाब, हवा आने दीजिए! 😉 फिर मिलेंगे. जब कोई और 'महान' कार्य संपन्न करना हो!")
+        else:
+            st.error("Pehli fursat mai nikal!")
+            # Embed GIF
+            st.markdown(
+                """
+                <img src="https://media.tenor.com/5R7Y3zK7WZkAAAAC/pehli-fursat-me-nikal.gif" alt="Pehli Fursat Me Nikal" width="300">
+                """,
+                unsafe_allow_html=True
+            )
+    else:
         st.stop()
-
-    # Step 3: Ask for Magic Trick
-    trick = st.radio("Do you want to see a magic trick?", ["Yes", "No"])
-    if trick == "No":
-        st.error(f"😈 Goodbye Mr. {full_name}! You are kicked out!")
-        st.video("https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4")
-        st.stop()
-
-    # Step 4: Like Instagram Post
-    st.info("🚨 You have to like a post first. Then only we move forward.")
-
-    # ✅ Instagram Styled Button
-    st.markdown(
-        """
-        <style>
-        .insta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #E1306C;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-        }
-        </style>
-        <a href="https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link" 
-           target="_blank" class="insta-button">Open Instagram Post</a>
-        """,
-        unsafe_allow_html=True
-    )
-
-    liked = st.radio("Have you liked the post?", ["Yes", "No"])
-    if liked == "No":
-        st.error("Like the post to proceed.")
-        st.stop()
-
-    # Final Step: Show Magic
-    st.success("✅ Thanks for liking the post! Now, here's your magic trick 🎩")
-    st.video("https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4")
