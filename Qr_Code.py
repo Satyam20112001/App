@@ -1,49 +1,39 @@
 import streamlit as st
-import webbrowser
-import time
-from PIL import Image
 
-# Load animations (GIFs or images)
-horror_image = "https://media.giphy.com/media/3o7TKP9xTuj7kTtQ3W/giphy.gif"
-kickout_image = "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif"
-magic_image = "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
-
-st.set_page_config(page_title="Magic Trick App", layout="centered")
 st.title("🎩 Welcome to the Magic Trick Portal")
 
-# 1. Name Input
+# Name Input
 fname = st.text_input("Enter your First Name")
 lname = st.text_input("Enter your Last Name")
 
 if fname and lname:
     full_name = f"{fname} {lname}"
-    st.success(f"Hello Mr. {full_name}, Welcome to Satyam Rajput Digital world 👋")
+    st.success(f"Hello Mr. {full_name} 👋")
 
-    # 2. Ask for volume
-    st.warning("Please increase your volume to proceed. If you don't, we can't continue.")
-    vol = st.radio("Did you increase your volume?", ["Yes", "No"])
-
-    if vol == "No":
-        st.image(kickout_image, caption="You're being kicked out! 👋")
+    # Volume Check
+    st.audio("https://yourcdn.com/path-to-test-sound.mp3")
+    volume_check = st.radio("Could you hear the sound?", ["Yes", "No"])
+    if volume_check == "No":
+        st.warning("Please increase your volume to proceed.")
         st.stop()
 
-    # 3. Ask to see magic trick
+    # Magic Trick Prompt
     choice = st.radio("Do you want to see a magic trick?", ["Yes", "No"])
-
     if choice == "No":
-        st.image(kickout_image, caption="Goodbye Mr. {}! Come back for the magic.".format(fname))
+        st.video("https://yourcdn.com/path-to-kickout-video.mp4")
         st.stop()
 
-    # 4. Like Instagram to proceed
+    # Instagram Post Requirement
     st.info("You have to like this Instagram post first. Then only we move forward.")
-    ig_clicked = st.button("Open Instagram Post")
+    st.markdown(
+        '<a href="https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link" target="_blank">Open Instagram Post</a>',
+        unsafe_allow_html=True
+    )
+    liked = st.radio("Have you liked the post?", ["Yes", "No"])
+    if liked == "No":
+        st.warning("Please like the post to proceed.")
+        st.stop()
 
-    if ig_clicked:
-        webbrowser.open_new_tab("https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link")
-        st.success("Thanks for the like! Now, here's your magic trick 🎩")
-        st.image(magic_image, caption="✨ Enjoy the magic ✨")
-
-    show_horror = st.checkbox("I don't want to like it")
-    if show_horror:
-        st.error("You were warned... 😈")
-        st.image(horror_image, caption="👻 Gotcha!")
+    # Display Magic Trick
+    st.success("Thanks for the like! Now, here's your magic trick 🎩")
+    st.video("https://yourcdn.com/path-to-magic-trick-video.mp4")
