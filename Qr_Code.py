@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-st.title("🎩 Welcome to the Magic Trick Portal")
+st.title("🎩 Welcome to the Satyam Rajput's Portal")
 
 # Step 0: Setup session state
 if "audio_played" not in st.session_state:
@@ -15,7 +15,7 @@ lname = st.text_input("Enter your Last Name")
 
 if fname and lname:
     full_name = f"{fname} {lname}"
-    st.success(f"Hello Mr. {full_name} 👋")
+    st.success(f"Hello Mr. {full_name}, Satyam Welcomes you to his digital portal 👋")
 
     # Step 2: Prompt to Play Audio
     st.warning("🔊 Please click the button below to play the audio and wait for 5 seconds.")
@@ -30,7 +30,7 @@ if fname and lname:
             """,
             unsafe_allow_html=True
         )
-        time.sleep(5)
+        time.sleep(6.5)
         st.session_state.audio_played = True
 
     if st.session_state.audio_played:
@@ -81,7 +81,7 @@ if fname and lname:
                 </div>
                 <div style="text-align: center; margin-top: 30px;">
                     <iframe width="100%" height="500" 
-                        src="https://www.memedownload.in/wp-content/uploads/2024/07/RPReplay_Final1722203131-1.mov" 
+                        <video controls="" src="https://www.memedownload.in/wp-content/uploads/2024/07/RPReplay_Final1722203131-1.mov" data-origwidth="0" data-origheight="0" style="width: 369px;" class=""></video> 
                         title="Padhai Likhai Karo" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
