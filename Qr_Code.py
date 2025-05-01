@@ -71,32 +71,32 @@ if fname and lname:
 
         liked = st.radio("Have you liked the post?", ["Yes", "No"], index=None)
 
-        if liked == "Yes":
-            st.markdown(
-                """
-                <div style="text-align: center; font-size: 28px; font-weight: bold; color: green; margin-top: 30px;">
-                काम खतम अब क्या करना है रुक कर, टाटा-बायबाय! लाइक तो मिल ही गया, अब यह रुक कर क्या देख रहे हो कुछ नहीं मिलेगा! 
-                जा कर पढ़ाई लिखाई करो! IS, YS बनो, और यहा हवा आने दो! 😉 फिर मिलेंगे. जब कोई और 'महान' कार्य संपन्न करना हो!
-            </div>
-            <div style="text-align: center; margin-top: 30px;">
-                <iframe width="100%" height="500" 
-                    src="https://www.youtube.com/embed/AAEXDZ77eQI?autoplay=1&mute=0&controls=1" 
-                    title="Padhai Likhai Karo" frameborder="0" allowfullscreen>
-                </iframe>
-            </div>
-            """,
-            unsafe_allow_html=True
-           )
-        else:
-            st.markdown(
-                """
-                <div style="text-align: center; font-size: 36px; font-weight: bold; color: red; margin-top: 50px;">
-                    Pehli fursat mai nikal!
+            if liked == "Yes":
+                st.markdown(
+                    """
+                    <div style="text-align: center; font-size: 28px; font-weight: bold; color: green; margin-top: 30px;">
+                    काम खतम अब क्या करना है रुक कर, टाटा-बायबाय! लाइक तो मिल ही गया, अब यह रुक कर क्या देख रहे हो कुछ नहीं मिलेगा! 
+                    जा कर पढ़ाई लिखाई करो! IS, YS बनो, और यहा हवा आने दो! 😉 फिर मिलेंगे. जब कोई और 'महान' कार्य संपन्न करना हो!
                 </div>
                 <div style="text-align: center; margin-top: 30px;">
-                    <img src="https://scrolldroll.com/wp-content/uploads/2021/05/hindustani-bhau-meme-templates-nikal-lavde-pehli-fursat-mein-nikal.jpg" 
-                    alt="Pehli Fursat Me Nikal" style="max-width: 100%; height: auto;">
+                    <iframe width="100%" height="500" 
+                        src="https://www.youtube.com/embed/AAEXDZ77eQI?autoplay=1&mute=0&controls=1" 
+                        title="Padhai Likhai Karo" frameborder="0" allowfullscreen>
+                    </iframe>
                 </div>
                 """,
                 unsafe_allow_html=True
-            )
+                )
+            else:
+                st.markdown(
+                    """
+                    <div style="text-align: center; font-size: 36px; font-weight: bold; color: red; margin-top: 50px;">
+                        Pehli fursat mai nikal!
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <img src="https://scrolldroll.com/wp-content/uploads/2021/05/hindustani-bhau-meme-templates-nikal-lavde-pehli-fursat-mein-nikal.jpg" 
+                        alt="Pehli Fursat Me Nikal" style="max-width: 100%; height: auto;">
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
