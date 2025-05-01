@@ -3,6 +3,12 @@ import time
 
 st.title("🎩 Welcome to the Magic Trick Portal")
 
+# Step 0: Setup session state
+if "audio_played" not in st.session_state:
+    st.session_state.audio_played = False
+if "volume_ok" not in st.session_state:
+    st.session_state.volume_ok = False
+
 # Step 1: Get User Name
 fname = st.text_input("Enter your First Name")
 lname = st.text_input("Enter your Last Name")
@@ -15,18 +21,19 @@ if fname and lname:
     st.warning("🔊 Please click the button below to play the audio and wait for 5 seconds.")
 
     if st.button("Play Audio"):
-        # Embed audio using HTML
         st.markdown(
             """
-            <audio controls autoplay>
+            <audio controls>
               <source src="https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
             """,
             unsafe_allow_html=True
         )
-        # Wait for 5 seconds
         time.sleep(5)
+        st.session_state.audio_played = True
+
+    if st.session_state.audio_played:
         st.success("✅ Audio played for 5 seconds. You may proceed.")
 
         volume_check = st.radio("Could you hear the sound clearly?", ["Yes", "No"])
@@ -34,10 +41,11 @@ if fname and lname:
         if volume_check == "No":
             st.error("You must increase the volume to proceed.")
             st.stop()
-        else:
-            st.success("Great! Proceeding to the next step.")
+        elif volume_check == "Yes":
+            st.session_state.volume_ok = True
 
-        # Step 3: Instagram Post Interaction
+    # Proceed only if volume is OK
+    if st.session_state.volume_ok:
         st.info("🚨 You have to like a post first. Then only we move forward.")
 
         # Styled Instagram Button
@@ -66,12 +74,9 @@ if fname and lname:
             st.success("वाह! काम ख़त्म, तो टाटा-बायबाय! लाइक तो मिल ही गया, अब यहां रुकना... सरासर ज़्यादती है! चलिए जनाब, हवा आने दीजिए! 😉 फिर मिलेंगे. जब कोई और 'महान' कार्य संपन्न करना हो!")
         else:
             st.error("Pehli fursat mai nikal!")
-            # Embed GIF
             st.markdown(
                 """
                 <img src="https://media.tenor.com/5R7Y3zK7WZkAAAAC/pehli-fursat-me-nikal.gif" alt="Pehli Fursat Me Nikal" width="300">
                 """,
                 unsafe_allow_html=True
             )
-    else:
-        st.stop()
