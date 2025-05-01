@@ -30,7 +30,7 @@ if fname and lname:
         st.stop()
 
     # Step 4: Like Instagram Post
-    st.info("🚨 You have to like this Instagram post first. Then only we move forward.")
+    st.info("🚨 You have to like a post first. Then only we move forward.")
 
     # ✅ Instagram Styled Button
     st.markdown(
