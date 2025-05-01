@@ -36,7 +36,7 @@ if fname and lname:
     if st.session_state.audio_played:
         st.success("✅ Audio played for 5 seconds. You may proceed.")
 
-        volume_check = st.radio("Could you hear the sound clearly?", ["Yes", "No"])
+        volume_check = st.radio("Could you hear the sound clearly?", ["Yes", "No"], index=None)
 
         if volume_check == "No":
             st.error("You must increase the volume to proceed.")
@@ -69,7 +69,7 @@ if fname and lname:
             unsafe_allow_html=True
         )
 
-        liked = st.radio("Have you liked the post?", ["Yes", "No"])
+        liked = st.radio("Have you liked the post?", ["Yes", "No"], index=None)
         if liked == "Yes":
             st.success("वाह! काम ख़त्म, तो टाटा-बायबाय! लाइक तो मिल ही गया, अब यहां रुकना... सरासर ज़्यादती है! चलिए जनाब, हवा आने दीजिए! 😉 फिर मिलेंगे. जब कोई और 'महान' कार्य संपन्न करना हो!")
         else:
