@@ -12,7 +12,7 @@ if "instagram_clicked" not in st.session_state:
     st.session_state.instagram_clicked = False
 
 # Step 1: Get User Title
-title = st.radio("Select your Title", ["Mr.", "Miss", "Mrs.", "Dr."])
+title = st.radio("Select your Title", ["Mr.", "Miss", "Mrs.", "Dr."], index=None)
 
 # Step 2: Get User Name
 fname = st.text_input("Enter your First Name")
