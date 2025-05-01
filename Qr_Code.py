@@ -29,6 +29,14 @@ if fname and lname:
         time.sleep(5)
         st.success("✅ Audio played for 5 seconds. You may proceed.")
 
+        volume_check = st.radio("Could you hear the sound clearly?", ["Yes", "No"])
+
+        if volume_check == "No":
+            st.error("You must increase the volume to proceed.")
+            st.stop()
+        else:
+            st.success("Great! Proceeding to the next step.")
+
         # Step 3: Instagram Post Interaction
         st.info("🚨 You have to like a post first. Then only we move forward.")
 
