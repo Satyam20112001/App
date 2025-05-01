@@ -23,7 +23,7 @@ if fname and lname:
     if st.button("Play Audio"):
         st.markdown(
             """
-            <audio controls>
+            <audio controls autoplay>
               <source src="https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -70,18 +70,19 @@ if fname and lname:
         )
 
         liked = st.radio("Have you liked the post?", ["Yes", "No"], index=None)
+
         if liked == "Yes":
             st.success("वाह! काम ख़त्म, तो टाटा-बायबाय! लाइक तो मिल ही गया, अब यहां रुकना... सरासर ज़्यादती है! चलिए जनाब, हवा आने दीजिए! 😉 फिर मिलेंगे. जब कोई और 'महान' कार्य संपन्न करना हो!")
-         else:
-        st.markdown(
-            """
-            <div style="text-align: center; font-size: 36px; font-weight: bold; color: red; margin-top: 50px;">
-                Pehli fursat mai nikal!
-            </div>
-            <div style="text-align: center; margin-top: 30px;">
-                <img src="https://scrolldroll.com/wp-content/uploads/2021/05/hindustani-bhau-meme-templates-nikal-lavde-pehli-fursat-mein-nikal.jpg" 
-                alt="Pehli Fursat Me Nikal" style="max-width: 100%; height: auto;">
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+        else:
+            st.markdown(
+                """
+                <div style="text-align: center; font-size: 36px; font-weight: bold; color: red; margin-top: 50px;">
+                    Pehli fursat mai nikal!
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <img src="https://scrolldroll.com/wp-content/uploads/2021/05/hindustani-bhau-meme-templates-nikal-lavde-pehli-fursat-mein-nikal.jpg" 
+                    alt="Pehli Fursat Me Nikal" style="max-width: 100%; height: auto;">
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
