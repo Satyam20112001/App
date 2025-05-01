@@ -9,15 +9,18 @@ if "audio_played" not in st.session_state:
 if "volume_ok" not in st.session_state:
     st.session_state.volume_ok = False
 
-# Step 1: Get User Name
+# Step 1: Get User Title
+title = st.radio("Select your Title", ["Mr.", "Miss", "Mrs.", "Dr."])
+
+# Step 2: Get User Name
 fname = st.text_input("Enter your First Name")
 lname = st.text_input("Enter your Last Name")
 
 if fname and lname:
-    full_name = f"{fname} {lname}"
-    st.success(f"Hello Mr. {full_name}, Satyam Welcomes you to his digital portal 👋")
+    full_name = f"{title} {fname} {lname}"
+    st.success(f"Hello {full_name}, Satyam Welcomes you to his digital portal 👋")
 
-    # Step 2: Prompt to Play Audio
+    # Step 3: Prompt to Play Audio
     st.warning("🔊 Please click the button below to play the audio and wait for 5 seconds.")
 
     if st.button("Play Audio"):
@@ -120,4 +123,3 @@ if fname and lname:
                 """,
                 unsafe_allow_html=True
             )
-
