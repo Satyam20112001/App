@@ -55,7 +55,7 @@ if fname and lname:
 
     liked = st.radio("Have you liked the post?", ["Yes", "No"])
     if liked == "No":
-        st.error("Please like the post to proceed.")
+        st.error("Like the post to proceed.")
         st.stop()
 
     # Final Step: Show Magic
