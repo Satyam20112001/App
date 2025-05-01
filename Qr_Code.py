@@ -8,9 +8,11 @@ if "audio_played" not in st.session_state:
     st.session_state.audio_played = False
 if "volume_ok" not in st.session_state:
     st.session_state.volume_ok = False
+if "instagram_clicked" not in st.session_state:
+    st.session_state.instagram_clicked = False
 
 # Step 1: Get User Title
-title = st.radio("Select your Title", ["Mr.", "Miss", "Mrs.", "Dr."], index=None)
+title = st.radio("Select your Title", ["Mr.", "Miss", "Mrs.", "Dr."])
 
 # Step 2: Get User Name
 fname = st.text_input("Enter your First Name")
@@ -47,8 +49,8 @@ if fname and lname:
         elif volume_check == "Yes":
             st.session_state.volume_ok = True
 
-    # Proceed only if volume is OK
-    if st.session_state.volume_ok:
+    # Proceed only if volume is OK and Instagram Post is clicked
+    if st.session_state.volume_ok and st.session_state.instagram_clicked:
         st.info("🚨 You have to like a post first. Then only we move forward.")
 
         # Styled Instagram Button
@@ -67,7 +69,8 @@ if fname and lname:
             }
             </style>
             <a href="https://www.instagram.com/reel/DJEzq2HT_UL/?utm_source=ig_web_copy_link" 
-               target="_blank" class="insta-button">Open Instagram Post</a>
+               target="_blank" class="insta-button" 
+               onclick="window.parent.postMessage('instagram_clicked', '*');">Open Instagram Post</a>
             """,
             unsafe_allow_html=True
         )
