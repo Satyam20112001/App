@@ -80,7 +80,6 @@ if fname and lname:
                     जा कर पढ़ाई लिखाई करो! IS, YS बनो, और यहा हवा आने दो! 😉 फिर मिलेंगे. जब कोई और 'महान' कार्य संपन्न करना हो!
                 </div>
                 <div style="text-align: center; margin-top: 30px;">
-                    <p style="color: #ffcc00; font-size: 18px;"><b>🔊 If you want sound, right-click the video and unmute or open in a new tab.</b></p>
                     <video width="100%" height="400" autoplay unmuted playsinline loop controls>
                         <source src="https://cdn.jsdelivr.net/gh/Satyam20112001/my-video-assets@main/RPReplay_Final1722203131-1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
