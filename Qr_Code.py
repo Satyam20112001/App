@@ -12,7 +12,7 @@ if "instagram_clicked" not in st.session_state:
     st.session_state.instagram_clicked = False
 
 # Step 1: Get User Title
-title = st.radio("Select your Title", ["Mr.", "Miss", "Mrs.", "Dr."], index=None)
+title = st.radio("Select your Title", ["Mr.", "Miss", "Mrs.", "Dr."])
 
 # Step 2: Get User Name
 fname = st.text_input("Enter your First Name")
@@ -49,11 +49,11 @@ if fname and lname:
         elif volume_check == "Yes":
             st.session_state.volume_ok = True
 
-    # Proceed only if volume is OK and Instagram Post is clicked
-    if st.session_state.volume_ok and st.session_state.instagram_clicked:
+    # Proceed only if volume is OK
+    if st.session_state.volume_ok:
         st.info("🚨 You have to like a post first. Then only we move forward.")
 
-        # Styled Instagram Button
+        # Display Instagram Button after the volume check
         st.markdown(
             """
             <style>
@@ -74,6 +74,10 @@ if fname and lname:
             """,
             unsafe_allow_html=True
         )
+
+        # Track if Instagram Post has been clicked
+        if "instagram_clicked" in st.session_state and not st.session_state.instagram_clicked:
+            st.session_state.instagram_clicked = True
 
         liked = st.radio("Have you liked the post?", ["Yes", "No"], index=None)  # Make the default option empty
 
