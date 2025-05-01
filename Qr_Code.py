@@ -76,15 +76,16 @@ if fname and lname:
             st.markdown(
                 """
                 <div style="text-align: center; font-size: 28px; font-weight: bold; color: green; margin-top: 30px;">
-                <video width="100%" height="400" autoplay muted playsinline loop>
                     काम खतम अब क्या करना है रुक कर, टाटा-बायबाय! लाइक कर दिया, अब यहा रुक कर क्या देख रहे हो कुछ नहीं मिलेगा! 
                     जा कर पढ़ाई लिखाई करो! IS, YS बनो, और यहा हवा आने दो! 😉 फिर मिलेंगे. जब कोई और 'महान' कार्य संपन्न करना हो!
-                    </video>
                 </div>
                 <div style="text-align: center; margin-top: 30px;">
-                    <iframe width="100%" height="500" 
+                    <iframe width="100%" height="500"
+                        <video width="100%" height="400" autoplay muted playsinline loop>
                         src="https://cdn.jsdelivr.net/gh/Satyam20112001/my-video-assets@main/RPReplay_Final1722203131-1.mp4" 
                         title="Padhai Likhai Karo" frameborder="0" allowfullscreen>
+                        Your browser does not support the video tag.
+                        </video>
                     </iframe>
                 </div>
                 """,
